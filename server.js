@@ -1,11 +1,12 @@
 var express = require('express');
 var app = express();
+var PORT = process.env.PORT || 5000;
 // app.use(express.static(__dirname + '/public'));
 
 app.get('/', function(req, res) {
-    res.sendFile('public/index.html', { root: __dirname });
+    res.sendFile('build/index.html', { root: __dirname });
  });
 
-//  app.set('view engine', 'ejs');
-
-app.listen(5000);
+app.listen(PORT, function(req, res) {
+    console.log('am listening...');
+});
